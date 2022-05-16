@@ -19,4 +19,5 @@ You may also see any lint errors in the console.
 2. Update Upload Component
 3. Include Custom hook for navigator and state elements
 4. Add Animations
+5. Add condition checks for Date Pickers (DOB cannot be past today)
 
