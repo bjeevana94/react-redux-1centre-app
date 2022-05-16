@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import _ from 'lodash';
+import { useEffect } from 'react';
 import './App.css';
+import RouteDefinations from "./routeDefinations"
 
 function App() {
+  useEffect(() => {
+      let user_info = localStorage.getItem('users_info')
+      if(_.isUndefined(user_info) || _.isEmpty(user_info)) localStorage.setItem('users_info', JSON.stringify([]))
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <RouteDefinations/>
     </div>
   );
 }
