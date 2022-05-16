@@ -5,15 +5,12 @@ const currentUserSlice = createSlice({
     initial_state: {},
     reducers: {
         init_current_user : (state, {payload}) => {
-            console.log(state, payload)
             state = {}
         },
-        update_current_user_with_index: (state, {payload}) => {
-            console.log(payload)
+        update_current_user_with_index: (state) => {
             return state
         },
         update_current_user : (state, {payload}) => {
-            console.log(state, payload)
             state = payload
         }
     }

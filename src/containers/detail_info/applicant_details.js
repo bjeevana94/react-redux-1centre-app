@@ -23,7 +23,6 @@ const initial_state = {
 
 const reducer = (state=initial_state, action) => {
     const {payload} = action
-    console.log(payload, action.type)
     switch(action.type){
         case 'SET_FIRST_NAME':
             return {...state, 'first_name': payload}
@@ -50,18 +49,10 @@ export const ApplicantDetails = () => {
 
     const navigator = useNavigate()
     const trigger_store_action = useDispatch()
-   
 
     const update = (val, actionType) => dispatch({'type': actionType, payload: val})
-    
-    // const update = (key, value) => {
-    //     if(key === 'image_url') value = value.toString()
-    //     // _.set(applicant_info, key, value)
-    //     setApplicantInfo(applicant_info)
-    // }
 
     const handleChange = info => {
-        console.log(info)
         getBase64(info.file.originFileObj, imageUrl => {
             setURL(imageUrl)
             update(imageUrl, 'SET_IMG_URL')
@@ -69,7 +60,6 @@ export const ApplicantDetails = () => {
     };
 
     const handelNext = () => {
-        console.log(state, "yoyoo")
         trigger_store_action(updateUserInfo({
             current_index,
             user: {
@@ -79,8 +69,6 @@ export const ApplicantDetails = () => {
         }))
         navigator('/review', {'state': Object.assign({}, current_user, {applicant_info: state})})
     }
-
-    // console.log(applicant_info)
 
     return (
         <>

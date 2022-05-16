@@ -32,7 +32,6 @@ export const Signup = () => {
     const [message, setMessage] = useState(null)
 
     const matchCheck = () => {
-        console.log(state)
         if(!_.isEmpty(password) && !_.isEmpty(confirm)){
             if(password !== confirm) setMessage("Password and Confirm password did not match.")
             else {

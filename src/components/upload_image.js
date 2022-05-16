@@ -22,7 +22,6 @@ export const ImageUpload = (props) => {
     );
 
     const { handleChange, imageUrl } = props;
-    console.log(imageUrl)
     return (
         <Upload
             style={{width: '300px', height: '300px'}}

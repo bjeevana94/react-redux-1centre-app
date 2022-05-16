@@ -18,7 +18,6 @@ export const currentIndexSlice = createSlice({
 export const { set_currentIndex} = currentIndexSlice.actions
 
 export const setCurrentIndex = (index) => async (dispatch) => {
-    console.log("in here")
     await dispatch(set_currentIndex(index))
 }
 

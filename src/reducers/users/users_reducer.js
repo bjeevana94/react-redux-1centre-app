@@ -15,16 +15,13 @@ const userInfoReducer = createSlice({
       setLocalStorage(state)
     },
     update_user_info: (state, {payload}) => {
-        console.log(payload, "jeevana check here")
         state[payload.current_index] = payload.user
         setLocalStorage(state)
     },
     delete_invalid_user: (state, {payload}) => {
-        console.log(payload)
         state.splice(payload.current_index, 1)
     },
     fetch_user: (state, action) => {
-        console.log("fetch_user")
         return state
     },
   },
